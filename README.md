@@ -1,1 +1,1 @@
-# [UNIFEI](https://www.unifei.edu.br/) - COM911 Sistemas Multimídia
+Para uso no ChromeCast
