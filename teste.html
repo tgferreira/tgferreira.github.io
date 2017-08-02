@@ -5,21 +5,50 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
 </head>
 <body>
-<!--
-<video width="352" height="198" controls>
-  <source src="http://starbr.digitalgroup.me:15000/live/0093/0093/1108.ts" type="application/x-mpegUR">
-  Your browser does not support the video tag.
-</video>
--->
-<h1>SportTV HD</h1>
-<div id="player"></div>
+<br/>
+<br/>
+  <h2>Globo</h2>
+  <div id="player1"></div>
   <script>
     var player = new Clappr.Player(
-      {
-        source: "files/sportvhd.m3u8", 
-        parentId: "#player"}
+    {
+      source: "http://217.23.2.169:8081/edge/globo/playlist.m3u8", 
+      parentId: "#player1"}
       );
-  </script>
+    </script>
+<br/>
+<br/>
+    <h2>Globo SP</h2>
+    <div id="player2"></div>
+    <script>
+      var player = new Clappr.Player(
+      {
+        source: "http://91.205.174.38:8081/live/sptv/chunks.m3u8", 
+        parentId: "#player2"}
+        );
+      </script>
+<br/>
+<br/>
+      <h2>GLOBO RJ</h2>
+      <div id="player3"></div>
+      <script>
+        var player = new Clappr.Player(
+        {
+          source: "http://91.205.174.38:8081/live/globo/chunks.m3u8", 
+          parentId: "#player3"}
+          );
+        </script>
+<br/>
+<br/>
+        <h2>Globo ND</h2>
+        <div id="player4"></div>
+        <script>
+          var player = new Clappr.Player(
+          {
+            source: "http://tv.redecanais.com:1935/redecanaisglobo/myStream/chunklist.m3u8 ", 
+            parentId: "#player4"}
+            );
+          </script>
 
-</body>
-</html>
+        </body>
+        </html>
