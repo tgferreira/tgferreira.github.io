@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <h2>Globo</h2>
+  <h2>Globo News</h2>
   <div id="player1"></div>
   <script>
     var player = new Clappr.Player({
@@ -14,6 +14,17 @@
       parentId: "#player1"
     });
   </script>
+
+  <h2>Cartoon Network</h2>
+  <div id="player2"></div>
+  <script>
+    var player = new Clappr.Player({
+      source: "http://95.211.149.215:8081/look/cartoon/playlist.m3u8", 
+      parentId: "#player2"
+    });
+  </script>
+
+
 
 
 </body>
