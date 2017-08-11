@@ -12,10 +12,14 @@
 </head>
 <body>
 
-<a href="globosp.html">GLOBO SP</a><br/>
-<a href="globonews.html">GLOBO NEWS</a><br/>
-<a href="record.html">GLOBO NEWS</a><br/>
-<a href="sbt.html">GLOBO NEWS</a><br/>
+  <h2>Globo News</h2>
+  <div id="player1"></div>
+  <script>
+    var player = new Clappr.Player({
+      source: "http://hls.fearfulale.xyz:80/s/ch0010695/22a3687fa0f4048a2d8a671d5122b15c.m3u8", 
+      parentId: "#player1"
+    });
+  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
