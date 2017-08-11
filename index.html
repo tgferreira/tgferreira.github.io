@@ -26,10 +26,10 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 <style>
     body {
@@ -37,6 +37,10 @@
         padding-top: 0px;
     }
 
+    li{
+list-style-type:none;
+    }
+    
     .sidenav {
         height: 100%;
         width: 0;
@@ -72,130 +76,120 @@
     }
 
     #main {
-        transition: margin-left .5s;
+        transition: margin-left 0.5s;
         padding: 16px;
     }
 
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-  }
+    #icon{
+        display: block;
+    }
+
 </style>
 </head>
 
 <body>
 
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <ul>
-          <li>
-          <a href="http://www.fb.com/tiagoapferreira">Contato</a>
-          </li>
-      </ul> 
-  </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+            <li>
+                <a href="http://www.fb.com/tiagoapferreira">Contato</a>
+            </li>
+        </ul> 
+    </div>
 
-  <div id="main">
-      <span id="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-      <!-- Page Content -->
-      <div class="container">
-        <table class="table table-hover borderless">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Canal</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div id="main">
+        <p id="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</p>
+        <!-- Page Content -->
+        <div class="container">
+            <table class="table table-hover borderless">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Canal</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <a href="canais/globosp.html">
-                            <img width="50" height="50" class="img-responsive" src="https://logodownload.org/wp-content/uploads/2013/12/rede-globo-logo.png" alt="">
-                        </a>
+                    <tr>
+                        <th scope="row">1</th>
                         <td>
-                            <a href="canais/globosp.html">Globo SP</a>
-                        </td>
-                    </a>
-                </td>
-            </tr>
+                            <a href="canais/globosp.html">
+                                <img width="50" height="50" class="img-responsive" src="https://logodownload.org/wp-content/uploads/2013/12/rede-globo-logo.png" alt="">
+                            </a>
+                            <td>
+                                <a href="canais/globosp.html">Globo SP</a>
+                            </td>
+                        </a>
+                    </td>
+                </tr>
 
-            <tr>
-                <th scope="row">2</th>
-                <td>
-                    <a href="canais/globonews.html">
-                        <img width="65" height="65" class="img-responsive" src="https://vignette2.wikia.nocookie.net/logopedia/images/8/8d/Globo_News_2008.png/revision/latest?cb=20151101154732" alt="">
-                    </a>
+                <tr>
+                    <th scope="row">2</th>
                     <td>
                         <a href="canais/globonews.html">
-                            Globo News
+                            <img width="65" height="65" class="img-responsive" src="https://vignette2.wikia.nocookie.net/logopedia/images/8/8d/Globo_News_2008.png/revision/latest?cb=20151101154732" alt="">
                         </a>
+                        <td>
+                            <a href="canais/globonews.html">
+                                Globo News
+                            </a>
+                        </td>
                     </td>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>
-                    <a href="canais/record.html">
-                        <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/pt/1/13/Logotipo_da_Rede_Record.png" alt="">
-                    </a>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
                     <td>
                         <a href="canais/record.html">
-                            Record
+                            <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/pt/1/13/Logotipo_da_Rede_Record.png" alt="">
                         </a>
+                        <td>
+                            <a href="canais/record.html">
+                                Record
+                            </a>
+                        </td>
                     </td>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>
-                    <a href="canais/band.html">
-                        <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rede_Bandeirantes_logo_2011.svg/958px-Rede_Bandeirantes_logo_2011.svg.png" alt="">
-                    </a>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
                     <td>
                         <a href="canais/band.html">
-                            Band
+                            <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rede_Bandeirantes_logo_2011.svg/958px-Rede_Bandeirantes_logo_2011.svg.png" alt="">
                         </a>
+                        <td>
+                            <a href="canais/band.html">
+                                Band
+                            </a>
+                        </td>
                     </td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-
-        var display = document.getElementById('icon').style.display;
-        if(display == "none")
-            document.getElementById('icon').style.display = 'block';
-        else
-            document.getElementById('icon').style.display = 'none';
-    }
-
-    function closeNav() {
-     document.getElementById("mySidenav").style.width = "0";
-     document.getElementById("main").style.marginLeft = "0";
-
-     document.body.style.backgroundColor = "white";
-     var display = document.getElementById('icon').style.display;
-     if(display == "none")
-        document.getElementById('icon').style.display = 'block';
-    else
-        document.getElementById('icon').style.display = 'none';
-}
-</script>
-
-<!-- Footer -->
-<footer>
-    <div class="row">
-        <div class="col-md-12">
-        </div>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("icon").style.visibility = "hidden";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("icon").style.visibility = "visible";
+
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </footer>
 
 </div>
 <!-- /.container -->
