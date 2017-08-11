@@ -1,1 +1,1 @@
-Para uso no ChromeCast
+# [TgFerreira] Designed for recreational use with ChromeCast.
