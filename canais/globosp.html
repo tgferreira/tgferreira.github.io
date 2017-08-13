@@ -12,7 +12,14 @@
 </head>
 <body>
 
-<iframe name="playervip" width="600" scrolling="no" border="0" frameborder="0" height="390" marginwidth="0" marginheight="0" allowfullscreen="" src="http://ekostreams.co/ch/bobo.php?width=600&height=384"></iframe>
+  <h2>Globo SP</h2>
+  <div id="player1"></div>
+  <script>
+    var player = new Clappr.Player({
+      source: "http://165.227.24.175/stream/IZvcBXHrfjnLhhMukzIqLuxygHaWwfEs.m3u8", 
+      parentId: "#player1"
+    });
+  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -22,3 +29,4 @@
 
 </body>
 </html>
+
