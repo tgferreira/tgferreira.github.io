@@ -31,76 +31,90 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style>
-    body {
-        font-family: "Lato", sans-serif;
-        padding-top: 0px;
-    }
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            padding-top: 0px;
+        }
 
-    li{
-list-style-type:none;
-    }
-    
-    .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
+        li{
+            list-style-type:none;
+        }
 
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
+        .menuLateral{
+            color: white !important;
+            cursor: pointer;
+        }
 
-    .sidenav a:hover, .offcanvas a:focus{
-        color: #f1f1f1;
-    }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
 
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-    #main {
-        transition: margin-left 0.5s;
-        padding: 16px;
-    }
+        .sidenav a:hover, .offcanvas a:focus{
+            color: #f1f1f1;
+        }
 
-    #icon{
-        display: block;
-    }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        #filmes {
+            transition: margin-left 0.5s;
+            padding: 16px;
+        }
 
-</style>
+        #canais {
+            transition: margin-left 0.5s;
+            padding: 16px;
+        }
+
+        #icon{
+            display: block;
+        }
+
+    </style>
 </head>
 
 <body>
-
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul>
             <li>
-                <a href="http://www.fb.com/tiagoapferreira">Contato</a>
+                <a class="menuLateral" onclick="return trocaDiv('filmes')">Filmes</a>
+            </li>
+            <li>
+                <a class="menuLateral" onclick="return trocaDiv('canais')">Canais</a>
+            </li>
+            <li>
+                <a class="menuLateral" href="http://www.fb.com/tiagoapferreira">Contato</a>
             </li>
         </ul> 
     </div>
 
-    <div id="main">
-        <p id="icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</p>
-        <!-- Page Content -->
+    <p id="icon" style="font-size:30px;cursor:pointer; padding: 10px" onclick="openNav()">&#9776; MENU</p>
+
+    <div id="canais" style="display: none">
         <div class="container">
             <table class="table table-hover borderless">
                 <thead>
@@ -111,75 +125,105 @@ list-style-type:none;
                     </tr>
                 </thead>
                 <tbody>
-
                     <tr>
                         <th scope="row">1</th>
                         <td>
                             <a href="canais/globosp.html">
                                 <img width="50" height="50" class="img-responsive" src="https://logodownload.org/wp-content/uploads/2013/12/rede-globo-logo.png" alt="">
                             </a>
-                            <td>
-                                <a href="canais/globosp.html">Globo SP</a>
-                            </td>
-                        </a>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            <a href="canais/globosp.html">Globo SP</a>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <th scope="row">2</th>
-                    <td>
-                        <a href="canais/globonews.html">
-                            <img width="65" height="65" class="img-responsive" src="https://vignette2.wikia.nocookie.net/logopedia/images/8/8d/Globo_News_2008.png/revision/latest?cb=20151101154732" alt="">
-                        </a>
+                    <tr>
+                        <th scope="row">2</th>
                         <td>
                             <a href="canais/globonews.html">
-                                Globo News
+                                <img width="65" height="65" class="img-responsive" src="https://vignette2.wikia.nocookie.net/logopedia/images/8/8d/Globo_News_2008.png/revision/latest?cb=20151101154732" alt="">
                             </a>
+                            <td>
+                                <a href="canais/globonews.html">
+                                    Globo News
+                                </a>
+                            </td>
                         </td>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>
-                        <a href="canais/record.html">
-                            <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/pt/1/13/Logotipo_da_Rede_Record.png" alt="">
-                        </a>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
                         <td>
                             <a href="canais/record.html">
-                                Record
+                                <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/pt/1/13/Logotipo_da_Rede_Record.png" alt="">
                             </a>
+                            <td>
+                                <a href="canais/record.html">
+                                    Record
+                                </a>
+                            </td>
                         </td>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>
-                        <a href="canais/band.html">
-                            <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rede_Bandeirantes_logo_2011.svg/958px-Rede_Bandeirantes_logo_2011.svg.png" alt="">
-                        </a>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
                         <td>
                             <a href="canais/band.html">
-                                Band
+                                <img width="50" height="50" class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rede_Bandeirantes_logo_2011.svg/958px-Rede_Bandeirantes_logo_2011.svg.png" alt="">
                             </a>
+                            <td>
+                                <a href="canais/band.html">
+                                    Band
+                                </a>
+                            </td>
                         </td>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="filmes" style="display: none">
+        <!-- Page Content -->
+        <div class="container">
+            <table class="table table-hover borderless">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Filme</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
+
     <script>
+
+
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("canais").style.marginLeft = "250px";
+            document.getElementById("filmes").style.marginLeft = "250px";
             document.getElementById("icon").style.visibility = "hidden";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("canais").style.marginLeft = "0";
+            document.getElementById("filmes").style.marginLeft = "0";
             document.getElementById("icon").style.visibility = "visible";
+        }
 
+        function trocaDiv(id){
+            if(id === "filmes"){
+                document.getElementById("filmes").style.display = 'block';
+                document.getElementById("canais").style.display = 'none';
+            } else if(id === "canais"){
+                document.getElementById("filmes").style.display = 'none';
+                document.getElementById("canais").style.display = 'block';
+            }
         }
     </script>
 
@@ -199,13 +243,12 @@ list-style-type:none;
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-104944294-1', 'auto');
   ga('send', 'pageview');
-
 </script>
 
 </body>
