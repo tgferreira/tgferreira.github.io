@@ -13,7 +13,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f5f5f5;
         }
         .container {
@@ -22,17 +22,24 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 400px;
-            width: 100%;
+            max-width: 100%;
+            width: 400px;
+            box-sizing: border-box;
         }
         h1 {
             margin-bottom: 20px;
+            font-size: 24px;
         }
         input, button {
             margin: 10px 0;
             padding: 10px;
             width: 100%;
             font-size: 16px;
+            box-sizing: border-box;
+        }
+        input {
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         button {
             background-color: #007BFF;
@@ -40,6 +47,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #0056b3;
@@ -48,6 +56,18 @@
             margin-top: 20px;
             font-size: 18px;
             color: #333;
+            word-wrap: break-word;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+            input, button {
+                font-size: 14px;
+            }
+            .result {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -56,23 +76,38 @@
 <div class="container">
     <h1>Calculadora de Valor por Dias Corridos</h1>
     <input type="number" id="valor" placeholder="Informe o valor em R$">
-    <input type="date" id="dataFinal">
     <button onclick="calcularValorPorDia()">Calcular</button>
     <div class="result" id="resultado"></div>
 </div>
 
 <script>
+    function calcularQuintoDiaUtil(proximaData) {
+        let contadorDiasUteis = 0;
+
+        while (contadorDiasUteis < 5) {
+            const diaSemana = proximaData.getDay();
+
+            if (diaSemana >= 1 && diaSemana <= 5) { // Segunda a sexta (dias úteis)
+                contadorDiasUteis++;
+            }
+            proximaData.setDate(proximaData.getDate() + 1);
+        }
+
+        return new Date(proximaData.setDate(proximaData.getDate() - 1));
+    }
+
     function calcularValorPorDia() {
         const valor = parseFloat(document.getElementById('valor').value);
         const dataAtual = new Date();
-        const dataFinal = new Date(document.getElementById('dataFinal').value);
-        
-        if (isNaN(valor) || isNaN(dataFinal.getTime())) {
-            alert("Por favor, preencha todos os campos corretamente.");
+        const proximoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 1);
+        const quintoDiaUtil = calcularQuintoDiaUtil(proximoMes);
+
+        if (isNaN(valor)) {
+            alert("Por favor, preencha o valor corretamente.");
             return;
         }
 
-        const diffTime = Math.abs(dataFinal - dataAtual);
+        const diffTime = Math.abs(quintoDiaUtil - dataAtual);
         const diasCorridos = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         if (diasCorridos === 0) {
@@ -80,7 +115,7 @@
         } else {
             const valorPorDia = valor / diasCorridos;
             document.getElementById('resultado').innerText = 
-                `Valor por dia corrido: R$ ${valorPorDia.toFixed(2)}\nDias corridos restantes: ${diasCorridos}`;
+                `Valor por dia corrido: R$ ${valorPorDia.toFixed(2)}\nDias corridos até o 5º dia útil do próximo mês (${quintoDiaUtil.toLocaleDateString('pt-BR')}): ${diasCorridos}`;
         }
     }
 </script>
