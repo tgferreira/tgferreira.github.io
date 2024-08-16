@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Valor por Dia Útil</title>
+    <title>Calculadora de Valor por Dias Corridos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,54 +54,33 @@
 <body>
 
 <div class="container">
-    <h1>Calculadora de Valor por Dia Útil</h1>
+    <h1>Calculadora de Valor por Dias Corridos</h1>
     <input type="number" id="valor" placeholder="Informe o valor em R$">
-    <input type="date" id="dataAtual">
-    <button onclick="calcularValorPorDiaUtil()">Calcular</button>
+    <input type="date" id="dataFinal">
+    <button onclick="calcularValorPorDia()">Calcular</button>
     <div class="result" id="resultado"></div>
 </div>
 
 <script>
-    function isDiaUtil(date) {
-        const day = date.getDay();
-        const feriados = [
-            '01/01', '21/04', '01/05', '07/09', '12/10', '02/11', '15/11', '25/12'
-        ];
-        const formattedDate = date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
-
-        return day >= 1 && day <= 5 && !feriados.includes(formattedDate);
-    }
-
-    function calcularDiasUteisRestantes(dataAtual) {
-        let diasUteis = 0;
-        const ultimoDiaMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
-
-        for (let d = new Date(dataAtual); d <= ultimoDiaMes; d.setDate(d.getDate() + 1)) {
-            if (isDiaUtil(d)) {
-                diasUteis++;
-            }
-        }
-
-        return diasUteis;
-    }
-
-    function calcularValorPorDiaUtil() {
+    function calcularValorPorDia() {
         const valor = parseFloat(document.getElementById('valor').value);
-        const dataAtual = new Date(document.getElementById('dataAtual').value);
+        const dataAtual = new Date();
+        const dataFinal = new Date(document.getElementById('dataFinal').value);
         
-        if (isNaN(valor) || !dataAtual) {
+        if (isNaN(valor) || isNaN(dataFinal.getTime())) {
             alert("Por favor, preencha todos os campos corretamente.");
             return;
         }
 
-        const diasUteisRestantes = calcularDiasUteisRestantes(dataAtual);
+        const diffTime = Math.abs(dataFinal - dataAtual);
+        const diasCorridos = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-        if (diasUteisRestantes === 0) {
-            document.getElementById('resultado').innerText = "Nenhum dia útil restante no mês.";
+        if (diasCorridos === 0) {
+            document.getElementById('resultado').innerText = "Nenhum dia corrido restante.";
         } else {
-            const valorPorDiaUtil = valor / diasUteisRestantes;
+            const valorPorDia = valor / diasCorridos;
             document.getElementById('resultado').innerText = 
-                `Valor por dia útil: R$ ${valorPorDiaUtil.toFixed(2)}\nDias úteis restantes: ${diasUteisRestantes}`;
+                `Valor por dia corrido: R$ ${valorPorDia.toFixed(2)}\nDias corridos restantes: ${diasCorridos}`;
         }
     }
 </script>
